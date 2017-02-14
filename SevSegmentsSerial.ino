@@ -6,10 +6,12 @@ void setup() {
    Serial.begin(115200);
    Serial.println("Serial ON");
    byte numDigits = 4;   
+   // d1,d2,d3,d4
    byte digitPins[] = {11, 10, 9, 6};
+   //a b c d e f g h
    byte segmentPins[] = {A1, 3, 4, 5, A0, 7, 8, 0};
-   bool resistorsOnSegments = false; // Use 'true' if on digit pins
-   byte hardwareConfig = COMMON_ANODE; // See README.md for options
+   bool resistorsOnSegments = false; 
+   byte hardwareConfig = COMMON_ANODE; // See README.md of SevSeg.h for options
    sevseg.begin(hardwareConfig, numDigits, digitPins, segmentPins, resistorsOnSegments);
 
 }
